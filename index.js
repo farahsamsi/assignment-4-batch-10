@@ -1,4 +1,4 @@
-// problem 1
+/**problem 1*/
 function calculateTax(income, expenses) {
   if (income < 0 || expenses < 0 || expenses > income) {
     return "Invalid Input";
@@ -18,7 +18,7 @@ function calculateTax(income, expenses) {
 // console.log(calculateTax(6000, 8000));
 
 
-/**Problem 2 */
+/** Problem 2 */
 function sendNotification(email){
     let splittingEmail = email.split('@');
     if(splittingEmail.length !== 2){
@@ -26,13 +26,38 @@ function sendNotification(email){
     }
     let userName = splittingEmail[0];
     let domainName = splittingEmail[1];
-    return userName + ' sent you an email from ' + domainName;
-    
+    return userName + ' sent you an email from ' + domainName;   
 }
 
-console.log(sendNotification('zihad@gmail.com'));
-console.log(sendNotification('farhan34@yahoo.com'));
-console.log(sendNotification('nadim.naem5@outlook.com'));
-console.log(sendNotification('fahim234.hotmail.com'));
-console.log(sendNotification('sadia8icloud.com'));
-console.log(sendNotification('sadia8ic@loud@.com'));
+// console.log(sendNotification('zihad@gmail.com'));
+// console.log(sendNotification('farhan34@yahoo.com'));
+// console.log(sendNotification('nadim.naem5@outlook.com'));
+// console.log(sendNotification('fahim234.hotmail.com'));
+// console.log(sendNotification('sadia8icloud.com'));
+// console.log(sendNotification('sadia8ic@loud@.com'));
+
+
+
+/** Problem 3 */
+function checkDigitsInName(name) {
+    if(typeof name !== 'string'){
+        return 'Invalid Input';
+    }
+    let testArray = ['1','2','3','4','5','6','7','8','9','0'];
+    let result = false;
+    for (let char of name){
+        if(testArray.includes(char)){
+            result = true;
+        }
+    }
+    return result;
+}
+
+console.log(checkDigitsInName('Raj123'));
+console.log(checkDigitsInName('n9ayeem'));
+console.log(checkDigitsInName('e1mu3'));
+console.log(checkDigitsInName('Suman'));
+console.log(checkDigitsInName('Name2024'));
+console.log(checkDigitsInName('!@#'));
+console.log(checkDigitsInName(["Raj"]));
+console.log(checkDigitsInName("R.aj"));
